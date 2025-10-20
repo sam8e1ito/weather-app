@@ -14,7 +14,7 @@ searchBtn.addEventListener("click", () => {
 
 async function getWeather(city) {
   try {
-    const response = await fetch(`/api/weather?city=${city}`);
+    const response = await fetch(`/.netlify/functions/weather?city=${city}`);
     if (!response.ok) throw new Error("City not found");
 
     const data = await response.json();

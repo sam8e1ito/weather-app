@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export async function handler(event) {
   const city = event.queryStringParameters.city;
   const apiKey = process.env.WEATHER_KEY;

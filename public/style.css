@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #bdd6f2;
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #4a90e2, #50a7f5, #1e3c72);
+    background-size: 400% 400%;
+    animation: GradientAnimation 10s ease infinite;
+}
+
+.container {
+    text-align: center;
+    background-color: #f0f4f8;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-family: Impact;
+    font-weight: 300;
+    color: #333333;
+}
+
+#cityInput {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#searchBtn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#weather{
+    height: 150px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    position: relative;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#weather h2 {
+    font-size: 24px;
+    color: #333333;
+    text-align: start;
+}
+
+#weather p {
+    font-size: 18px;
+    color: #555555;
+    margin: 10px 0;
+}
+
+#weather img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#weather .temp {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 10px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Gradient Animation */
+
+@keyframes GradientAnimation {
+    0% {background-position:0% 50%}
+    50% {background-position:100% 50%}
+    100% {background-position:0% 50%}
+}
+
+input, button {
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    outline: none;
+}
+button:hover {
+    background-color: #357ab8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+button:active {
+    transform: scale(0.95);
+}

@@ -2,14 +2,22 @@ const searchBtn = document.getElementById("searchBtn");
 const cityInput = document.getElementById("cityInput");
 const weatherDiv = document.getElementById("weather");
 
-searchBtn.addEventListener("click", () => {
+function searchWeather() {
   const city = cityInput.value.trim();
   if (!city) {
     weatherDiv.innerHTML = "<p>Please enter a city name.</p>";
     return;
   }
+  cityInput.value = "";
+  getWeather(city);  
+}
 
-  getWeather(city);
+searchBtn.addEventListener("click", searchWeather);
+
+cityInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {  
+    searchWeather();
+  }
 });
 
 async function getWeather(city) {
@@ -33,3 +41,4 @@ async function getWeather(city) {
     weatherDiv.innerHTML = `<p>${error.message}</p>`;
   }
 }
+
